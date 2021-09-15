@@ -1,0 +1,12 @@
+<h1>Mostrando datos del registro de artículo.</h1>
+
+<p>
+    Title: <%= @article.title %>
+</p>
+
+<p>
+    Description: <%= @article.description %>
+</p>
+
+<%= link_to 'Editar', edit_article_path(@article) %> | 
+<%= link_to 'Regresar', articles_path %>
