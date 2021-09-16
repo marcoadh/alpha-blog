@@ -5,11 +5,11 @@
     <hr>
     <%= simple_format(@article.description) %>
     <div class="article-actions">
-        <%= link_to 'Editar', edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-        <%= link_to 'Eliminar', article_path(@article), method: :delete, 
+        <%= link_to 'Editar artículo', edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+        <%= link_to 'Eliminar artículo', article_path(@article), method: :delete, 
                                                         data: { confirm: "Estás seguro?"}, 
                                                         class: "btn btn-xs btn-danger" %>
-        <%= link_to 'Regresar', articles_path, class: "btn btn-xs btn-success" %>
+        <%= link_to 'Ir a la lista de artículos', articles_path, class: "btn btn-xs btn-success" %>
     </div>
 </div>
 
