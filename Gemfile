@@ -9,6 +9,9 @@ gem 'rails', '~> 5.2.6'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# 
+gem 'will_paginate', '~> 3.1.5'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
@@ -28,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
