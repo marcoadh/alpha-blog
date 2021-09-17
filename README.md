@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Page: https://alpha-blog-mcruz.herokuapp.com/
