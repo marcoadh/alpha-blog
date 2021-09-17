@@ -14,18 +14,30 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Artículos", articles_path %></li>
         <li><%= link_to "Usuarios", users_path %></li>
-        <% if logged_in? %>  
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mantenimiento <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artículos<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Lista de artículos", articles_path %></li>
+            <% if logged_in? %>
               <li role="separator" class="divider"></li>
-              <li><%= link_to "Nuevo Artículo", new_article_path %></li>
+              <li><%= link_to "Crear Artículo", new_article_path %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Todas las categorías", categories_path %></li>
+            <% Category.all.each do |category| %>
+              <li><%= link_to "#{category.name}", category_path(category) %></li>
+            <% end %>
+            <% if logged_in? and current_user.admin? %>
               <li role="separator" class="divider"></li>
-            </ul>
-          </li>
-        <% end %>
+              <li><%= link_to "Crear Categoría", new_category_path %></li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -38,8 +50,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <%= "| Admin" if current_user.admin? %><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Mi perfil", user_path(current_user) %></li>
-              <li><%= link_to "Editar perfil", edit_user_path(current_user) %></li>
+              <li><%= link_to "Mis artículos", user_path(current_user) %></li>
+              <li><%= link_to "Editar cuenta", edit_user_path(current_user) %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Cerrar Sesión', salir_path, method: :delete %></li>
             </ul>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   
   resources :articles
+  resources :categories, except: [:destroy]
 
   get 'registrarse', to: 'users#new'
   resources :users, except: [:new]
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
   get 'sesion', to: 'sessions#new'
   post 'sesion', to: 'sessions#create'
   delete 'salir', to: 'sessions#destroy'
+
 end

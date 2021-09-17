@@ -11,7 +11,7 @@
                     <%= link_to user.username, user_path(user) %>
                 </li>
                 <li>
-                    <small><%= pluralize(user.articles.count, "Artículos") if user.articles %></small>
+                    <small><%= pluralize(user.articles.count, "artículo") if user.articles %></small>
                 </li>
                 <% if logged_in? and current_user.admin? %>
                 <br>
