@@ -86,6 +86,8 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    hirb (0.7.3)
+    htmlbeautifier (1.3.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -214,6 +216,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  hirb
+  htmlbeautifier
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
